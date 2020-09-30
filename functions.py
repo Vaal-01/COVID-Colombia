@@ -7,7 +7,7 @@ def conectar(database):
     try:
         conn=bd.connect(database)
         print("Se ha conectado a"+database)
-        conn.cursor()
+        return conn
     except Exception as e:
         print("Lo sentimos no se pudo conectar por"+e)
         exit()
