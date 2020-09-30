@@ -36,8 +36,8 @@ def verificar(conn, tabla):
 def quitarEspacios(data):
     return data.rename(columns={
         'ID de caso': 'id_caso','Fecha de notificación':'fecha_notificacion','Código DIVIPOLA': 'cod_divipola','Ciudad de ubicación': 'ciudad',
-        'Departamento o Distrito ': 'depto','atención': 'atencion','Edad': 'edad','Sexo': 'sexo', 'Estado': 'estado', 'Tipo':'tipo'
-        'País de procedencia': 'pais_procedencia', 'FIS': 'FIS','Fecha de muerte': 'fecha_muerte','Fecha diagnostico': 'fecha_diagnostico',
+        'Departamento o Distrito ': 'depto','atención': 'atencion','Edad': 'edad','Sexo': 'sexo', 'Estado': 'estado', 'Tipo':'tipo',
+        'País de procedencia':'pais_procedencia', 'FIS': 'FIS','Fecha de muerte': 'fecha_muerte','Fecha diagnostico': 'fecha_diagnostico',
         'Fecha recuperado': 'fecha_recuperado','fecha reporte web': 'fecha_web', 'Tipo recuperación': 'tipo_recuperacion',
         'Codigo departamento': 'cod_depto','Codigo pais': 'cod_pais','Pertenencia etnica': 'etnia','Nombre grupo etnico': 'nom_etnia'
     })
@@ -51,13 +51,10 @@ def graficar(conn, tabla):
     print("Gráficas de dos dimensiones")  
 
 #Funcionamiento
-def ejecutar():
+if __name__ == '__main__':
     #Datos Abiertos del Coronavirus COVID-19 por ciudad en Colombia
     url = "https://www.datos.gov.co/api/views/gt2j-8ykr/rows.csv?accessType=DOWNLOAD"
-    in os.getcwd():
+    if os.getcwd():
         database = "datos/covid19.db"
     tabla = "tablacovid"
-
-if __name__ == '__main__':
-    ejecutar()
     main(url, database, tabla)
