@@ -21,7 +21,7 @@ def extraerInformacion(url):
     return pd.read_csv(url)
 
 def guardarInformacion(conn,data,tabla):
-    data.to_sql(tabla,conn,schema=None,if_exits:'replace',index=False,index_label=None)
+    data.to_sql(tabla,conn,schema=None,if_exits='replace',index=False,index_label=None)
 
 def consultar(conn,sentencia):
     return pd.read_sql(sentencia,conn)
