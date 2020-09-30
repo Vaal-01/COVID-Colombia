@@ -20,3 +20,13 @@ def cicular_estado(conn,tabla):
     plot.show()
 
 #Grafica de dos dimensiones
+def dosd_contagios(conn,tabla):
+    cursor = conn.cursor()
+    datos  = cursor.execute("select sexo, count(*) as total from {tabla} where depto='Antioquia' group by sexo")
+    f = plot.figure()
+    ax = f.add_subplots()
+    plot.title('Personas por genero contagiados en Antioquia')
+    plot.xlabel('Género')
+    plot.ylabel('Contagiados')
+    ax.scatter(datos['sexo'],datos['total'])
+    plot.show()
