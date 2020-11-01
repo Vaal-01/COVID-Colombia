@@ -37,22 +37,25 @@ def verificar(conn, tabla):
 
 def quitarEspacios(data):
     return data.rename(columns={
-        'ID de caso': 'id_caso','Fecha de notificación':'fecha_notificacion','Código DIVIPOLA': 'cod_divipola','Ciudad de ubicación': 'ciudad',
-        'Departamento o Distrito ': 'depto','atención': 'atencion','Edad': 'edad','Sexo': 'sexo', 'Estado': 'estado', 'Tipo':'tipo',
-        'País de procedencia':'pais_procedencia', 'FIS': 'FIS','Fecha de muerte': 'fecha_muerte','Fecha diagnostico': 'fecha_diagnostico',
-        'Fecha recuperado': 'fecha_recuperado','fecha reporte web': 'fecha_web', 'Tipo recuperación': 'tipo_recuperacion',
-        'Codigo departamento': 'cod_depto','Codigo pais': 'cod_pais','Pertenencia etnica': 'etnia','Nombre grupo etnico': 'nom_etnia'
+        'fecha reporte web':'fecha_reporte','ID de caso': 'id_caso','Fecha de notificación':'fecha_notificacion','Código DIVIPOLA departamento': 'cod_divipola', 
+        'Nombre departamento': 'depto','Código DIVIPOLA municipio': 'cod_divipolamun','Nombre municipio': 'municipio','Edad': 'edad','Unidad de medida de edad': 'unidad_edad',
+        'Sexo': 'sexo', 'Tipo de contagio':'tipo','Ubicación del caso': 'ubicacion_caso','Estado': 'estado','Código ISO del país':'iso','Nombre del país':'pais_procedencia',
+        'Recuperado': 'recuperado','Fecha de inicio de síntomas': 'fecha_sintomas','Fecha de muerte': 'fecha_muerte','Fecha de diagnóstico':'fecha_diagnostico',
+        'Fecha de recuperación': 'fecha_recuperado', 'Tipo de recuperación': 'tipo_recuperacion','Pertenencia étnica': 'etnia',
+        'Nombre del grupo étnico': 'nombre_etnia'
     })
 
 #Generacion graficas
 def graficar(conn, tabla):
     print("La gráficas serán exportadas en formato 'png'. Por favor espere")
     barras_edad(conn,tabla)
-    barras_etnia(conn,tabla)
+    barras_rec(conn,tabla)
     cicular_atencion(conn,tabla)
     cicular_Genero(conn,tabla)
     dosd_contagios(conn,tabla)
     dosd_ciudad(conn,tabla)
+    fechas(conn,tabla)
+    fechasmuerte(conn,tabla)
     
     print("Ya se guardaron las gráficas en la carpeta del archivo exitosamente")  
 
