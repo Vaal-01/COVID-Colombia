@@ -1,7 +1,7 @@
 # COVID-Colombia
-Script de Python capaz de extraer la información de los datos COVID de la pagina Datos del gobierno 'Datos Abiertos del Coronavirus COVID-19 por ciudad en Colombia', para guardarlos en
-una base de datos y representarlos de forma grafica mediante circulos, gráficos de dispersion en dos dimensiones y diagramas de barras.
+Script de Python capaz de extraer la información de los datos COVID de la pagina Datos del gobierno 'Datos Abiertos del Coronavirus COVID-19 por ciudad en Colombia', para guardarlos en una base de datos y representarlos de forma selectiva graficamente mediante circulos, gráficos de dispersión y diagramas de barras; además de representarlos en un mapa de Colombia de calor y de Bogotá según las localidades.
 La extracción de los datos tiene un tiempo de respuesta de varios minutos debido que la base de datos esta compuesta de más de 800.000 registros.  
+
 
 Para ejecutar el código se utiliza el comando:
 
