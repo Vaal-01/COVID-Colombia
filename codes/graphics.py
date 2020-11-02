@@ -41,7 +41,16 @@ def cicular_Genero(conn,tabla):
    plot.savefig("plotsColombia/GraficaCircular_Genero.png", bbox_inches='tight')
 
 #Grafica de dispersion 
-def dosd_contagios(conn,tabla):
+def edades(conn,tabla):
+    datos  = consultar(conn,f"select edad, count(*) as total from {tabla}  group by edad")
+    fig, ax = plot.subplots()
+    ax.set_ylabel('Edad')
+    ax.set_xlabel('Contagios')
+    ax.set_title('Número de personas contagiadas por el Covid-19 según su Edad')
+    ax.scatter(datos['total'],datos['edad'])
+    plot.savefig("plotsColombia/Grafico_Edad.png", bbox_inches='tight')
+
+def contagios(conn,tabla):
     datos  = consultar(conn,f"select municipio, count(*) as total from {tabla} where depto=='RISARALDA' and  recuperado ='Fallecido' group by municipio")
     fig, ax = plot.subplots()
     ax.set_ylabel('Ciudades')
@@ -50,7 +59,7 @@ def dosd_contagios(conn,tabla):
     ax.scatter(datos['total'],datos['municipio'])
     plot.savefig("plotsColombia/Grafico_Depto.png", bbox_inches='tight')
 
-def dosd_ciudad(conn,tabla):
+def ciudad(conn,tabla):
     datos  = consultar(conn,f"select municipio, count(*) as total from {tabla} where depto=='VICHADA' group by municipio")
     fig, ax = plot.subplots()
     ax.set_ylabel('Ciudades')

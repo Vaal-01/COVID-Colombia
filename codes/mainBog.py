@@ -2,7 +2,7 @@ import os
 
 from functions import *
 from graphicsBog import *
-from Mapas import MapaBog
+#from Mapas import MapaBog
 
 #Funcion Principal
 def ejecucion():
@@ -24,7 +24,7 @@ def ejecucion():
         print('Se ha descargado  los datos para la base de datos de Covid-19 de Bogotá')
     print('Comenzando graficación de datos')
     graficarB(conn, tabla)
-    mapasB()
+    #mapasB()
     terminarConexion(conn)
 
 
@@ -40,5 +40,5 @@ def graficarB(conn, tabla):
 #Generacion mapa   
 def mapasB():
     print('Comenzando generación de mapas de calor')
-    MapaBog()
-    print('Mapa de Colombia generado en pagina html')
+    #MapaBog()
+    print('Mapa de Bogotá generado en pagina html')
