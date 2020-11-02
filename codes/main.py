@@ -21,8 +21,7 @@ def main(url, database, tabla):
         print('Se ha descargado  los datos para la base de datos de Covid-19')
     print('Comenzando graficación de datos')
     graficar(conn, tabla)
-    print('Comenzando generación de mapas de calor')
-   # mapas(conn,tabla)
+    mapas()
     terminarConexion(conn)
     print('DATOS ESPECÍFICOS DE BOGOTÁ :D') 
     ejecucion()
@@ -40,10 +39,11 @@ def graficar(conn, tabla):
     fechasmuerte(conn,tabla)
     print("Ya se guardaron las gráficas en la carpeta del archivo exitosamente")  
 
-#Generacion mapas   
-def mapas(conn, tabla):
-    print("Generando mapa de calor en Colombia")
-    MapaCol(conn,tabla)
+#Generacion mapa   
+def mapas():
+    print('Comenzando generación de mapas de calor')
+    MapaCol()
+    print('Mapa de Colombia generado en pagina html')
 
 #Funcionamiento
 if __name__ == '__main__':
