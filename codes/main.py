@@ -1,5 +1,4 @@
 import os
-
 from functions import *
 from graphics import *
 #from Mapas import MapaCol
