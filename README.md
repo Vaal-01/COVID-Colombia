@@ -12,3 +12,5 @@ Para poder ejecutarlo previamente debe tener instaladas las bibliotecas de: matp
 \python -m pip install -U pandas
 
 \python -m pip install -U matplotlib
+
+\pip install plotly==4.5
