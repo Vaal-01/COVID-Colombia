@@ -2,7 +2,7 @@ import os
 
 from functions import *
 from graphics import *
-from Mapas import MapaCol
+#from Mapas import MapaCol
 from mainBog import ejecucion
 
 #Funcion Principal
@@ -21,7 +21,7 @@ def main(url, database, tabla):
         print('Se ha descargado  los datos para la base de datos de Covid-19')
     print('Comenzando graficación de datos')
     graficar(conn, tabla)
-    mapas()
+    #mapas()
     terminarConexion(conn)
     print('DATOS ESPECÍFICOS DE BOGOTÁ :D') 
     ejecucion()
@@ -33,8 +33,9 @@ def graficar(conn, tabla):
     barras_rec(conn,tabla)
     cicular_atencion(conn,tabla)
     cicular_Genero(conn,tabla)
-    dosd_contagios(conn,tabla)
-    dosd_ciudad(conn,tabla)
+    edades(conn,tabla)
+    contagios(conn,tabla)
+    ciudad(conn,tabla)
     fechas(conn,tabla)
     fechasmuerte(conn,tabla)
     print("Ya se guardaron las gráficas en la carpeta del archivo exitosamente")  
@@ -42,7 +43,7 @@ def graficar(conn, tabla):
 #Generacion mapa   
 def mapas():
     print('Comenzando generación de mapas de calor')
-    MapaCol()
+   # MapaCol()
     print('Mapa de Colombia generado en pagina html')
 
 #Funcionamiento
